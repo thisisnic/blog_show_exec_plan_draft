@@ -4,9 +4,9 @@ format: html
 editor: visual
 ---
 
-The `arrow` package allows you to harness the power of the [Acero execution engine](https://arrow.apache.org/docs/cpp/streaming_execution.html) for data manipulation and analysis. The code in `arrow` provides bindings to `dplyr` and `tidyverse` functions, so that you can use these interfaces without having to learn about the inner workings of Acero. But what if you actually want to know more?
+The `arrow` package allows you to harness the power of the [Acero execution engine](https://arrow.apache.org/docs/cpp/streaming_execution.html) for data manipulation and analysis. The code in `arrow` provides bindings to `dplyr` verbs and `tidyverse` functions, so that you can use these interfaces without having to learn about the inner workings of Acero. But what if you actually want to know more?
 
-In the latest release of `arrow`, version 9.0.0, the `show_exec_plan()` function is introduced. This function allows you to see the execution plan generated from your code. For example:
+In the latest release of `arrow`, version 9.0.0, the [`show_exec_plan()`](https://arrow.apache.org/docs/r/reference/show_exec_plan.html) function is introduced. This function allows you to see the execution plan generated from your code. For example:
 
 ```{r}
 #| echo: false
@@ -33,11 +33,11 @@ Acero is Arrow's query execution engine.
 
 ## What is a query execution engine?
 
-A query execution engine is a piece of software which allows users to execute queries against a data source. It typically has multiple steps, which could include things like taking the input and parsing it into an algebraic format, re-ordering and optimising the query in order to run it in the most efficient way, and actually running the query.
+A query execution engine is a piece of software which allows users to execute queries against a data source. It typically has multiple steps, which could include things like taking the query and parsing it into an algebraic format, re-ordering and optimising the query in order to run it in the most efficient way, and actually running the query.
 
 ## What is an ExecPlan?
 
-Queries to be run on Acero are specified as execution plans aka ExecPlans. These involve using directed graphs to express what operations need to take place. The graph for the ExecPlan in the code example earlier in this post looks like this.
+Queries to be run on Acero are specified as execution plans aka ExecPlans. These are directed graphs which express what operations need to take place. The graph for the ExecPlan in the code example earlier in this post looks like this.
 
 ```{r}
 #| echo: false
