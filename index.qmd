@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-The `arrow` package allows you to take advantage of the power of the [Acero execution engine](https://arrow.apache.org/docs/cpp/streaming_execution.html) for data manipulation and analysis. The code in `arrow` provides bindings to `dplyr` verbs and `tidyverse` functions, so that you can use these interfaces without having to learn about the inner workings of Acero. But what if you actually want to know more?
+The `arrow` package allows you to take advantage of the power of the [Acero execution engine](https://arrow.apache.org/docs/cpp/streaming_execution.html) for data manipulation and analysis. The code in `arrow` provides bindings to `dplyr` verbs and `tidyverse` functions, so that you can use these interfaces without having to understand the inner workings of Acero. But what if you actually want to know more?
 
 In the latest release of `arrow`, version 9.0.0, the [`show_exec_plan()`](https://arrow.apache.org/docs/r/reference/show_exec_plan.html) function is introduced. This function allows you to see the execution plan generated from your code. For example:
 
