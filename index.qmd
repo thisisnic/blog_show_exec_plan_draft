@@ -25,7 +25,7 @@ mtcars %>%
   show_exec_plan()
 ```
 
-This functionality is similar to that of `dplyr::explain()` and you'll get the same result whether you call `arrow::show_exec_plan()`, `dplyr::show_query()` or `dplyr::show_query()` on an `arrow_dplyr_query` object.
+This functionality is similar to that of [`dplyr::explain()`](https://dplyr.tidyverse.org/reference/explain.html) and you'll get the same result whether you call [`arrow::show_exec_plan()`](https://arrow.apache.org/docs/r/reference/show_exec_plan.html), [`dplyr::explain()`](https://dplyr.tidyverse.org/reference/explain.html) or [`dplyr::show_query()`](https://dplyr.tidyverse.org/reference/explain.html) on an `arrow_dplyr_query` object.
 
 ## What is Acero?
 
