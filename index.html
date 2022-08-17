@@ -125,7 +125,7 @@
 <p>This functionality is similar to that of <a href="https://dplyr.tidyverse.org/reference/explain.html"><code>dplyr::explain()</code></a> and you’ll get the same result whether you call <a href="https://arrow.apache.org/docs/r/reference/show_exec_plan.html"><code>arrow::show_exec_plan()</code></a>, <a href="https://dplyr.tidyverse.org/reference/explain.html"><code>dplyr::explain()</code></a> or <a href="https://dplyr.tidyverse.org/reference/explain.html"><code>dplyr::show_query()</code></a> on an <code>arrow_dplyr_query</code> object.</p>
 <section id="what-is-acero" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-acero">What is Acero?</h2>
-<p>Acero is Arrow’s query execution engine.</p>
+<p>Acero is an Arrow-native query execution engine, developed as part of the Arrow C++ / R libraries.</p>
 </section>
 <section id="what-is-a-query-execution-engine" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-query-execution-engine">What is a query execution engine?</h2>
@@ -136,8 +136,8 @@
 <p>Queries to be run on Acero are specified as execution plans aka ExecPlans. These are directed graphs which express what operations need to take place via nodes - called ExecNodes in this case. The graph for the ExecPlan in the code example earlier in this post looks like this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-12f4b0db2355b6e71e25" style="width:100%;height:464px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-12f4b0db2355b6e71e25">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\na [label = \"TableSourceNode\"]\nb [label = \"FilterNode\"]\nc [label = \"ProjectNode\"]\nd [label = \"SinkNode\"]\n\na -> b -> c -> d\n\n}\n\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-006cc40140e18bf01055" style="width:100%;height:464px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-006cc40140e18bf01055">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\na [label = \"TableSourceNode\"]\nb [label = \"FilterNode\"]\nc [label = \"ProjectNode\"]\nd [label = \"SinkNode\"]\n\na -> b -> c -> d\n\n}\n\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>The ExecNodes in the plan above are:</p>
