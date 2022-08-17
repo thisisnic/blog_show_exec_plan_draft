@@ -29,7 +29,7 @@ This functionality is similar to that of [`dplyr::explain()`](https://dplyr.tidy
 
 ## What is Acero?
 
-Acero is Arrow's query execution engine.
+Acero is an Arrow-native query execution engine, developed as part of the Arrow C++ / R libraries.
 
 ## What is a query execution engine?
 
