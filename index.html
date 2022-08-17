@@ -133,14 +133,20 @@
 </section>
 <section id="what-is-an-execplan" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-an-execplan">What is an ExecPlan?</h2>
-<p>Queries to be run on Acero are specified as execution plans aka ExecPlans. These are directed graphs which express what operations need to take place. The graph for the ExecPlan in the code example earlier in this post looks like this.</p>
+<p>Queries to be run on Acero are specified as execution plans aka ExecPlans. These are directed graphs which express what operations need to take place via nodes - called ExecNodes in this case. The graph for the ExecPlan in the code example earlier in this post looks like this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-f81973de11d744c0c31a" style="width:100%;height:464px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f81973de11d744c0c31a">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\na [label = \"TableSourceNode\"]\nb [label = \"FilterNode\"]\nc [label = \"ProjectNode\"]\nd [label = \"SinkNode\"]\n\na -> b -> c -> d\n\n}\n\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-12f4b0db2355b6e71e25" style="width:100%;height:464px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12f4b0db2355b6e71e25">{"x":{"diagram":"\ndigraph graph2 {\n\ngraph [layout = dot]\n\n# node definitions with substituted label text\nnode [shape = rectangle, width = 4, fillcolor = Biege]\na [label = \"TableSourceNode\"]\nb [label = \"FilterNode\"]\nc [label = \"ProjectNode\"]\nd [label = \"SinkNode\"]\n\na -> b -> c -> d\n\n}\n\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>The <a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#table-source">TableSourceNode</a> is used to input the data, which is then passed to the <a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#filter">FilterNode</a>, where we apply our filter to only retain rows where the value of <code>mpg</code> is greater than 20. The <a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#project">ProjectNode</a> then specifies which columns we want, including the new column <code>wt_kg</code> as a <a href="https://arrow.apache.org/docs/cpp/api/compute.html">compute expression</a>. Finally, the <a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#sink">SinkNode</a> provides the output.</p>
+<p>The ExecNodes in the plan above are:</p>
+<ul>
+<li><p><a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#table-source">TableSourceNode</a> - used to input the data</p></li>
+<li><p><a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#filter">FilterNode</a> - where we apply our filter to only retain rows where the value of <code>mpg</code> is greater than 20</p></li>
+<li><p><a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#project">ProjectNode</a> - this then specifies which columns we want, including the new column <code>wt_kg</code> as a <a href="https://arrow.apache.org/docs/cpp/api/compute.html">compute expression</a></p></li>
+<li><p><a href="https://arrow.apache.org/docs/cpp/streaming_execution.html#sink">SinkNode</a> - this provides the output</p></li>
+</ul>
 </section>
 </main>
 <!-- /main column -->
